@@ -74,35 +74,38 @@
             // 
             // btnSua
             // 
+            btnSua.BackColor = Color.White;
             btnSua.Location = new Point(621, 82);
             btnSua.Margin = new Padding(4);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(134, 48);
             btnSua.TabIndex = 7;
             btnSua.Text = "Sửa";
-            btnSua.UseVisualStyleBackColor = true;
+            btnSua.UseVisualStyleBackColor = false;
             btnSua.Click += btnSua_Click;
             // 
             // btnHuy
             // 
+            btnHuy.BackColor = Color.White;
             btnHuy.Location = new Point(788, 82);
             btnHuy.Margin = new Padding(4);
             btnHuy.Name = "btnHuy";
             btnHuy.Size = new Size(134, 48);
             btnHuy.TabIndex = 6;
             btnHuy.Text = "Huỷ bỏ";
-            btnHuy.UseVisualStyleBackColor = true;
+            btnHuy.UseVisualStyleBackColor = false;
             btnHuy.Click += btnHuy_Click;
             // 
             // btnThoat
             // 
+            btnThoat.BackColor = Color.White;
             btnThoat.Location = new Point(788, 151);
             btnThoat.Margin = new Padding(4);
             btnThoat.Name = "btnThoat";
             btnThoat.Size = new Size(134, 48);
             btnThoat.TabIndex = 5;
             btnThoat.Text = "Thoát";
-            btnThoat.UseVisualStyleBackColor = true;
+            btnThoat.UseVisualStyleBackColor = false;
             btnThoat.Click += btnThoat_Click;
             // 
             // groupBox2
@@ -182,13 +185,14 @@
             // 
             // btnThem
             // 
+            btnThem.BackColor = Color.White;
             btnThem.Location = new Point(621, 19);
             btnThem.Margin = new Padding(4);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(134, 48);
             btnThem.TabIndex = 2;
             btnThem.Text = "Thêm";
-            btnThem.UseVisualStyleBackColor = true;
+            btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += btnThem_Click;
             // 
             // label1

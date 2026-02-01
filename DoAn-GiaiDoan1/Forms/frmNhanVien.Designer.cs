@@ -1,6 +1,6 @@
 ﻿namespace DoAn_GiaiDoan1.Forms
 {
-    partial class frmKhachHang
+    partial class frmNhanVien
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label3 = new Label();
             groupBox1 = new GroupBox();
-            txtSDTKH = new TextBox();
+            txtSDT = new TextBox();
+            txtChucVu = new TextBox();
             label2 = new Label();
             btnSua = new Button();
             btnHuy = new Button();
@@ -37,21 +39,41 @@
             btnLuu = new Button();
             btnXoa = new Button();
             btnThem = new Button();
-            txtTenKH = new TextBox();
+            txtTenNV = new TextBox();
             label1 = new Label();
-            groupBox2 = new GroupBox();
             dataGridView1 = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
-            TenKH = new DataGridViewTextBoxColumn();
+            TenNV = new DataGridViewTextBoxColumn();
+            ChucVu = new DataGridViewTextBoxColumn();
             SDT = new DataGridViewTextBoxColumn();
+            groupBox2 = new GroupBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            groupBox3 = new GroupBox();
+            rdbNu = new RadioButton();
+            rdbNam = new RadioButton();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            groupBox2.SuspendLayout();
+            groupBox3.SuspendLayout();
             SuspendLayout();
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(17, 103);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(127, 19);
+            label3.TabIndex = 10;
+            label3.Text = "Số Điện Thoại(*):";
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(txtSDTKH);
+            groupBox1.Controls.Add(groupBox3);
+            groupBox1.Controls.Add(txtSDT);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(txtChucVu);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(btnSua);
             groupBox1.Controls.Add(btnHuy);
@@ -59,37 +81,46 @@
             groupBox1.Controls.Add(btnLuu);
             groupBox1.Controls.Add(btnXoa);
             groupBox1.Controls.Add(btnThem);
-            groupBox1.Controls.Add(txtTenKH);
+            groupBox1.Controls.Add(txtTenNV);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Times New Roman", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(15, 20);
+            groupBox1.Location = new Point(13, 13);
             groupBox1.Margin = new Padding(4);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4);
             groupBox1.Size = new Size(967, 224);
-            groupBox1.TabIndex = 1;
+            groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Tìm Kiếm Khách Hàng";
-            groupBox1.Enter += groupBox1_Enter;
+            groupBox1.Text = "Tìm Kiếm Dịch Vụ";
             // 
-            // txtSDTKH
+            // txtSDT
             // 
-            txtSDTKH.Location = new Point(190, 151);
-            txtSDTKH.Margin = new Padding(4);
-            txtSDTKH.Name = "txtSDTKH";
-            txtSDTKH.Size = new Size(391, 26);
-            txtSDTKH.TabIndex = 9;
+            txtSDT.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtSDT.Location = new Point(181, 99);
+            txtSDT.Margin = new Padding(4);
+            txtSDT.Name = "txtSDT";
+            txtSDT.Size = new Size(391, 26);
+            txtSDT.TabIndex = 11;
+            // 
+            // txtChucVu
+            // 
+            txtChucVu.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtChucVu.Location = new Point(181, 65);
+            txtChucVu.Margin = new Padding(4);
+            txtChucVu.Name = "txtChucVu";
+            txtChucVu.Size = new Size(391, 26);
+            txtChucVu.TabIndex = 9;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(15, 155);
+            label2.Location = new Point(17, 69);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(150, 19);
+            label2.Size = new Size(91, 19);
             label2.TabIndex = 8;
-            label2.Text = "SDT Khách Hàng(*):";
+            label2.Text = "Chức Vụ(*):";
             // 
             // btnSua
             // 
@@ -165,35 +196,25 @@
             btnThem.UseVisualStyleBackColor = false;
             btnThem.Click += btnThem_Click;
             // 
-            // txtTenKH
+            // txtTenNV
             // 
-            txtTenKH.Location = new Point(190, 66);
-            txtTenKH.Margin = new Padding(4);
-            txtTenKH.Name = "txtTenKH";
-            txtTenKH.Size = new Size(391, 26);
-            txtTenKH.TabIndex = 1;
+            txtTenNV.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTenNV.Location = new Point(181, 31);
+            txtTenNV.Margin = new Padding(4);
+            txtTenNV.Name = "txtTenNV";
+            txtTenNV.Size = new Size(391, 26);
+            txtTenNV.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(15, 70);
+            label1.Location = new Point(17, 35);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(145, 19);
+            label1.Size = new Size(132, 19);
             label1.TabIndex = 0;
-            label1.Text = "Tên Khách Hàng(*):";
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(dataGridView1);
-            groupBox2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox2.Location = new Point(15, 264);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(967, 294);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Danh sách khách hàng";
+            label1.Text = "Tên Nhân Viên(*):";
             // 
             // dataGridView1
             // 
@@ -201,13 +222,13 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, TenKH, SDT });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, TenNV, ChucVu, SDT });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(3, 22);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(961, 269);
-            dataGridView1.TabIndex = 0;
+            dataGridView1.TabIndex = 1;
             // 
             // ID
             // 
@@ -215,56 +236,114 @@
             ID.HeaderText = "ID";
             ID.Name = "ID";
             // 
-            // TenKH
+            // TenNV
             // 
-            TenKH.DataPropertyName = "TenKH";
-            TenKH.HeaderText = "Tên Khách Hàng";
-            TenKH.Name = "TenKH";
+            TenNV.DataPropertyName = "TenNV";
+            TenNV.HeaderText = "Tên Nhân Viên";
+            TenNV.Name = "TenNV";
+            // 
+            // ChucVu
+            // 
+            ChucVu.DataPropertyName = "ChucVu";
+            ChucVu.HeaderText = "Chức Vụ";
+            ChucVu.Name = "ChucVu";
             // 
             // SDT
             // 
             SDT.DataPropertyName = "SDT";
-            SDT.HeaderText = "SDT";
+            SDT.HeaderText = "Số Điện Thoại";
             SDT.Name = "SDT";
             // 
-            // frmKhachHang
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(dataGridView1);
+            groupBox2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            groupBox2.Location = new Point(13, 257);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(967, 294);
+            groupBox2.TabIndex = 6;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Danh sách nhân viên";
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(rdbNam);
+            groupBox3.Controls.Add(rdbNu);
+            groupBox3.Location = new Point(89, 150);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(439, 67);
+            groupBox3.TabIndex = 12;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Giới Tính";
+            // 
+            // rdbNu
+            // 
+            rdbNu.AutoSize = true;
+            rdbNu.Location = new Point(253, 26);
+            rdbNu.Name = "rdbNu";
+            rdbNu.Size = new Size(49, 23);
+            rdbNu.TabIndex = 0;
+            rdbNu.TabStop = true;
+            rdbNu.Text = "Nữ";
+            rdbNu.UseVisualStyleBackColor = true;
+            // 
+            // rdbNam
+            // 
+            rdbNam.AutoSize = true;
+            rdbNam.Location = new Point(59, 26);
+            rdbNam.Name = "rdbNam";
+            rdbNam.Size = new Size(59, 23);
+            rdbNam.TabIndex = 1;
+            rdbNam.TabStop = true;
+            rdbNam.Text = "Nam";
+            rdbNam.UseVisualStyleBackColor = true;
+            // 
+            // frmNhanVien
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SlateGray;
-            ClientSize = new Size(1029, 570);
-            Controls.Add(groupBox2);
+            BackColor = Color.LightSlateGray;
+            ClientSize = new Size(1007, 570);
             Controls.Add(groupBox1);
+            Controls.Add(groupBox2);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
-            Name = "frmKhachHang";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmKhachHang";
-            Load += frmKhachHang_Load;
+            Name = "frmNhanVien";
+            Text = "frmNhanVien";
+            Load += frmNhanVien_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox2.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
+        private Label label3;
         private GroupBox groupBox1;
+        private TextBox txtSDT;
+        private TextBox txtChucVu;
+        private Label label2;
         private Button btnSua;
         private Button btnHuy;
         private Button btnThoat;
         private Button btnLuu;
         private Button btnXoa;
         private Button btnThem;
-        private TextBox txtTenKH;
+        private TextBox txtTenNV;
         private Label label1;
-        private TextBox txtSDTKH;
-        private Label label2;
-        private GroupBox groupBox2;
         private DataGridView dataGridView1;
+        private GroupBox groupBox2;
         private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn TenKH;
+        private DataGridViewTextBoxColumn TenNV;
+        private DataGridViewTextBoxColumn ChucVu;
         private DataGridViewTextBoxColumn SDT;
+        private GroupBox groupBox3;
+        private RadioButton rdbNam;
+        private RadioButton rdbNu;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

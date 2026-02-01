@@ -17,6 +17,11 @@ namespace DoAn_GiaiDoan1.Data
         public DbSet<HoaDon> HoaDon { get; set; }
         public DbSet<DatPhong> DatPhong { get; set; }
         public DbSet<ChiTietHoaDon> ChiTietHoaDon { get; set; }
+        public DbSet<ThanhToan> ThanhToan { get; set; }
+        public DbSet<LoaiPhong> LoaiPhong { get; set; }
+        public DbSet<CaLamViec> CaLamViec { get; set; }
+        public DbSet<PhanCong> PhanCong { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

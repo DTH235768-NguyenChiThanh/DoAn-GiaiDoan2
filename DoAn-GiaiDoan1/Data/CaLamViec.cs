@@ -7,16 +7,12 @@ using System.Threading.Tasks;
 
 namespace DoAn_GiaiDoan1.Data
 {
-    public class NhanVien
+    public class CaLamViec
     {
         public int ID { get; set; }
-        public string TenNV { get; set; }
-        public string ChucVu { get; set; }
-        public string SDT { get; set; }
-         public string GioiTinh { get; set; }
-        public virtual ObservableCollectionListSource<HoaDon> HoaDon { get; } = new();
+        public string TenCa { get; set; }
+        public DateTime GioBatDau { get; set; }
+        public DateTime GioKetThuc { get; set; }
         public virtual ObservableCollectionListSource<PhanCong> PhanCong { get; } = new();
-
-
     }
 }
